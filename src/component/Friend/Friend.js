@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Friend = (props) => {
-  const { name, email, phone } = props.friend;
+  const { name, email } = props.friend;
   return (
     <div>
-     <p>this is single friend{name}</p>
+      <p>
+        My name is {name} and {email}
+      </p>
     </div>
   );
 };
