@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Friend from "../Friend/Friend";
 
-function Main(props) {
+const Friends =() =>{
   const [friends, setFriends] = useState([]);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -24,4 +24,4 @@ function Main(props) {
   );
 }
 
-export default Main;
+export default Friends;
