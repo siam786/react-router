@@ -5,26 +5,34 @@ import Header from "./component/Header/Header";
 import Friends from "./component/Friends/Friends";
 import Notfound from "./component/Notfound/Notfound";
 import Home from "./component/Home/Home";
+import FriendDetails from "./component/FriendDetails/FriendDetails";
 
 function App() {
   return (
     <div className="app">
       <Router>
+        <Header />
         <Switch>
-          <Route path="/about">
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route exact path="/home">
+            <Home></Home>
+          </Route>
+          <Route exact path="/about">
             <About></About>
           </Route>
-          <Route path="/header">
-            <Header/>
+          <Route exact path="/header">
+            <Header />
           </Route>
-          <Route path="/friends">
+          <Route exact path="/friend/:friendId">
+            <FriendDetails />
+          </Route>
+          <Route exact path="/friends">
             <Friends></Friends>
           </Route>
-          <Route exact path="/">
-            <Home/>
-          </Route>
-          <Route>
-            <Notfound/>
+          <Route exact path="*">
+            <Notfound />
           </Route>
         </Switch>
       </Router>
